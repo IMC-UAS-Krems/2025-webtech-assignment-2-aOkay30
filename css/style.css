@@ -1,0 +1,74 @@
+#welcometext {
+
+    color: white;
+    font-size: 500%;
+
+    /* From w3schools on vertically centering an element */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* https://www.w3schools.com/howto/howto_css_image_text.asp */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centeredrelative {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centeredverticallyrelative {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.buy-button {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* .navbar {
+    
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+
+    div{
+        display: flexbox;
+        position: top;
+        background-color: black;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+        height: 50px;
+        width: 100%;
+
+    }
+
+    a{
+        display: inline-block;
+        color: white;
+        padding: 1px;
+        margin: 3px;
+    }
+} */

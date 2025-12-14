@@ -1,0 +1,326 @@
+<html>
+
+<head>
+
+    <!-- IMPORTING BOOTSTRAP -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- IMPORTING REGULAR CSS/JS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/scripts.js"></script>
+
+    <!-- LOCAL STYLE -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- setting background image -->
+    <div id="welcomeDiv" class="bg-image"
+        style="background-image: url('img/catbgimage.jpeg'); height:100%; width: 100%;">
+
+        <!-- Bootstrap Navbar
+        <nav class="navbar navbar-expand-lg bg-body-secondary bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Navigation</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Index</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
+
+        <!-- Welcome Section/Body -->
+        <!-- RESPONSIVENESS: SHRINK TEXT ON SMALLER SCREEN OR INCREASE TEXT GAP -->
+        <h1 class="text-center font-weight-bold fs-1" id="welcometext" style="top: 40%">Welcome!</h1>
+        <h2 class="text-center font-weight-bold fs-1" id="welcometext" style="font-size: 150%; top: 65%">This is our
+            animal shelter's official website! Here you can donate various products for our animals.</h2>
+        <!-- this button collapses the welcome screen and expands the shop/checkout screen -->
+        <button class="btn btn-success text-center" id="welcometext" style="font-size: 150%; top: 90%"
+            onclick="openShop()">Continue</button>
+
+
+    </div>
+    <!-- change "d-none" property from class to unhide -->
+    <div id="shopDiv" class="text-dark d-none" style="background-color: #C19A6B; width: 100%; height: 100%; overflow: auto;">
+        <!-- Bootstrap Navbar (FOR SHOP)-->
+        <nav class="navbar navbar-expand-lg bg-dark" style="margin: 1%;">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Categories: </a>
+                <div class="navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <!-- <a class="nav-link active text-white" aria-current="page" href="#">Index</a> -->
+                            <button class="btn text-white font-weight-bold" onclick="changeTab('meals')">Meals</button>
+                            <button class="btn text-white font-weight-bold" onclick="changeTab('toys')">Toys</button>
+                            <button class="btn text-white font-weight-bold"
+                                onclick="changeTab('donations')">Donations</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Product Gallery
+         https://mdbootstrap.com/docs/standard/extended/gallery/ -->
+        <!-- MEALS -->
+        <div class="row" id="meal-row">
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 1 Animal Meal -->
+                <img src="/img/1mealimg.png" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">1 Meal</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€1</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/1mealimg.png', '1 Meal', 1)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 5 Animal Meals -->
+                <img src="/img/petfoods.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">5 Meals</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€4</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/petfoods.jpeg', '5 Meals', 4)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 10 Animal Meals -->
+                <img src="/img/petfood.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">10 Meals</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€7</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/petfood.jpeg', '10 Meals', 7)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 20 Animal Meals -->
+                <img src="/img/petfood2.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">20 Meals</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€14</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/petfood2.jpeg', '20 Meals', 14)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- TOYS -->
+        <div class="row d-none" id="toy-row">
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 1 Toy -->
+                <img src="/img/pettoy1.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">1 Toy</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€3</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/pettoy1.jpeg', '1 Toy', 3)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 3 Toys -->
+                <img src="/img/pettoys2.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">3 Toys</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€4</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/pettoys2.jpeg', '3 Toys', 4)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 1 Big Toy -->
+                <img src="/img/pettoys4.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">1 Big Toy</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€10</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/pettoys4.jpeg', '1 Big Toy', 10)">Add to Cart</button>
+            </div>
+
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 1 House -->
+                <img src="/img/pettoys3.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">1 House</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€20</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/pettoys3.jpeg', '1 House', 20)">Add to Cart</button>
+            </div>
+
+        </div>
+
+        <!-- DONATIONS -->
+        <div class="row d-none" id="donation-row">
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 5 Euros -->
+                <img src="/img/donations1.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">5 Euros</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€5</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/donations1.jpeg', '5 Euros', 5)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 50 Euros -->
+                <img src="/img/donations2.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">50 Euros</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€50</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/donations2.jpeg', '50 Euros', 50)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 300 Euros -->
+                <img src="/img/donations3.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">300 Euros</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€300</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/donations3.jpeg', '300 Euros', 300)">Add to Cart</button>
+            </div>
+            <div class="col-md-12 mb-4 col-lg-3 mb-lg-3">
+
+                <!-- 100000 Euros -->
+                <img src="/img/donations4.jpeg" class="w-100 shadow-1-strong rounded mb-4">
+                <div class="top-left">
+                    <h3 class="p-3 mb-2 bg-dark text-white">100000 Euros</h3>
+                    <h3 class="p-2 mb-2 bg-dark text-white">€100000</h3>
+                </div>
+                <button class="btn btn-success" style="width: 100%"
+                    onclick="buyProduct('/img/donations4.jpeg', '100000 Euros', 100000)">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <br>
+        <!-- Cart Section -->
+        <div class="container">
+            <h1 class="bg-dark text-white text-center" style="padding: 2px">Cart</h1>
+            <div id="cartHolder">
+                <!-- Placeholder Product -->
+                <!-- <div class="row border">
+            <div class="col-3">
+                <img
+                src="/img/bgimagetemp.jpeg"
+                class="shadow-1-strong rounded mb-4"
+                width="65"
+                height="65"
+                style="margin-left: 20%; margin-bottom: 0%; line-height: 0%; margin-bottom: 0%"
+                >
+            </div>
+            <div class="col-3 text-center fs-1 font-weight-bold">Product Name</div>
+            <div class="col-3  text-center fs-1 font-weight-bold">Product Price</div>
+            <div class="col-3">
+            <button class="btn btn-danger">Cancel</button>
+            </div> -->
+            </div>
+        </div>
+
+        <br>
+        <!-- Checkout Button (will open a pop-up form) -->
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#checkoutFormModal"
+                    style="width: 100%" onclick="checkoutFormOpen()">Checkout</button>
+
+                <div class="modal fade" id="checkoutFormModal" tabindex="-1" role="dialog"
+                    aria-labelledby="checkoutFormModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="checkoutFormModalLabel">Checkout</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- --- -->
+                                <form id="detailsForm" class="d-none">
+                                    <div class="form-group">
+                                        <label for="formInput1">Email Address</label>
+                                        <input type="email" class="form-control" id="formInput1"
+                                            placeholder="name@example.com">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="formInput2">Phone Number</label>
+                                        <input type="tel" class="form-control" id="formInput2"
+                                            placeholder="4385392795834">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="formInput3">Full Name</label>
+                                        <input type="text" class="form-control" id="formInput3"
+                                            placeholder="John Smith">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="formInput4">Card Number</label>
+                                        <input type="text" class="form-control" id="formInput4"
+                                            placeholder="1111222233334444">
+                                    </div>
+                                </form>
+                                <div id="finalConfirmation" class="">
+
+                                </div>
+
+                                <!-- --- -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" id="checkoutFormButton" class="btn btn-success"
+                                    onclick="continueToBuy()">Continue</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="bg-dark">
+
+</footer>
+
+</body>
+
+</html>
