@@ -108,9 +108,13 @@ function cancelProduct(eidButton) {
 let inputs = []
 
 function checkoutFormOpen() {
+    document.getElementById("checkoutFormButton").classList.remove("d-none")
     document.getElementById("checkoutFormButton").innerHTML = "Continue"
+    document.getElementById("checkoutFormButton").setAttribute('onclick', 'continueToBuy()')
     document.getElementById("detailsForm").classList = ""
-    document.getElementById("finalConfirmation").classList = "d-none"
+    document.getElementById("finalConfirmation").classList.add("d-none")
+    document.getElementById("finalConfirmationText").classList.add("d-none")
+
 }
 
 function continueToBuy() {
@@ -187,10 +191,16 @@ function updateCheckoutForm() {
 
     // updating other modal elements
     document.getElementById("checkoutFormButton").innerHTML = "Buy"
+    document.getElementById("checkoutFormButton").setAttribute('onclick', 'FinalBuy()')
     document.getElementById("detailsForm").classList = "d-none"
     document.getElementById("finalConfirmation").classList = ""
 
 
+}
+
+function FinalBuy(){
+    document.getElementById("checkoutFormButton").classList.add("d-none")
+    document.getElementById("finalConfirmationText").classList.remove("d-none")
 }
 
 function checkoutList(product) {
